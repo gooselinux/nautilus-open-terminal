@@ -1,0 +1,11 @@
+diff -up nautilus-open-terminal-0.17/src/eel-gnome-extensions.c.leak nautilus-open-terminal-0.17/src/eel-gnome-extensions.c
+--- nautilus-open-terminal-0.17/src/eel-gnome-extensions.c.leak	2009-10-05 00:33:09.578719889 -0400
++++ nautilus-open-terminal-0.17/src/eel-gnome-extensions.c	2009-10-05 00:33:38.925721117 -0400
+@@ -61,6 +61,7 @@ try_terminal_command (const char *progra
+ 	}
+ 
+ 	quoted = g_shell_quote (program_in_path);
++	g_free (program_in_path);
+ 	if (args == NULL || args[0] == '\0') {
+ 		return quoted;
+ 	}
